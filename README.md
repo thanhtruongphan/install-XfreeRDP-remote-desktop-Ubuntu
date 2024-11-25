@@ -40,6 +40,7 @@ sudo make install
 ```
 
 *** **If it has some errors like:**__ 
+```
 _PULSE_LIBRARY (ADVANCED)
     linked by target "rdpsnd-client-pulse" in directory /home/jetson/FreeRDP/channels/rdpsnd/client/pulse
     linked by target "audin-client-pulse" in directory /home/jetson/FreeRDP/channels/audin/client/pulse
@@ -47,8 +48,9 @@ _PULSE_LIBRARY (ADVANCED)
 -- Configuring incomplete, errors occurred!
 See also "/home/jetson/FreeRDP/build/CMakeFiles/CMakeOutput.log".
 See also "/home/jetson/FreeRDP/build/CMakeFiles/CMakeError.log"._
-
+```
 **_OR:_**
+```
 _jetson@nano:~/FreeRDP/build$ make -j$(nproc)
 make: *** No targets specified and no makefile found.  Stop.
 
@@ -59,9 +61,10 @@ jetson@nano:~/FreeRDP/build$ xfreerdp --version
 Command 'xfreerdp' not found, but can be installed with:
 
 sudo apt install freerdp2-x11_
-
+```
 => **_DO IT:_**
-Install Missing Dependencies:
+
+**Install Missing Dependencies:**
 
 ```
 sudo apt-get update
@@ -71,7 +74,7 @@ sudo apt-get install -y build-essential cmake git libssl-dev libx11-dev libxext-
     libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libwayland-dev
 ```
 
-Clean and Retry Configuration:
+**Clean and Retry Configuration:**
 
 ```
 cd ~/FreeRDP
@@ -79,11 +82,11 @@ rm -rf build
 mkdir build
 cd build
 ```
-then: 
+**then: **
 ```
 cmake ..
 ```
-Compile and Install:
+**Compile and Install:**
 ```
 make -j$(nproc)
 sudo make install
@@ -92,26 +95,25 @@ sudo ldconfig
 
 ## Then install XRDP (base for XfreeRDP can works):
 
-Reinstall xrdp:
+**Reinstall xrdp:**
 ```
 sudo apt-get purge xrdp -y
 sudo apt-get install xrdp -y
 ```
 
-_After reinstalling, check for the existence of the required files:_
+**_After reinstalling, check for the existence of the required files:_**
 ```
 ls /etc/xrdp/xrdp.ini
 ls /usr/share/xrdp/
 ```
 
-Restart xrdp
-
-_After completing the above steps, restart the xrdp service:_
+**Restart xrdp**
+**_After completing the above steps, restart the xrdp service:_**
 ```
 sudo systemctl restart xrdp
 ```
 
-_Verify that the service is running without errors:_
+**_Verify that the service is running without errors:_**
 
 ```
 sudo systemctl status xrdp
@@ -130,12 +132,12 @@ sudo apt install freerdp2-x11 freerdp2-shadow-x11
 sudo apt install xfce4 xfce4-goodies
 ```
 
-_Set Xfce as the default session:_
+**_Set Xfce as the default session:_**
 ```
 echo "startxfce4" > ~/.xsession
 ```
 
-_Then restart xrdp:_
+**_Then restart xrdp:_**
 ```
 sudo systemctl restart xrdp
 ```
@@ -145,7 +147,7 @@ sudo systemctl restart xrdp
 sudo nano /etc/xrdp/startwm.sh
 ```
 
-_then modify this file:_
+**_then modify this file:_**
 
 ```
 #!/bin/sh
@@ -181,25 +183,25 @@ startxfce4
 
 ```
 
-_then:_
+**_then:_**
 ```
 sudo chmod +x $(which xfce4-terminal)
 ```
 
-_Then restart xrdp:_
+**_Then restart xrdp:_**
 
 ```
 sudo systemctl restart xrdp
 ```
 
-_then restart system:_
+**_then restart system:_**
 
 ```
 sudo reboot
 ```
 
 ## ok, now start rdp:
-_on Ubuntu laptop:_
+**_on Ubuntu laptop:_**
 ```
 xfreerdp /v<your jestson nano ip> /u:<jet son name> /size:1280x720
 ```
@@ -209,40 +211,43 @@ xfreerdp /v<your jestson nano ip> /u:<jet son name> /size:1280x720
 xfreerdp /v:192.168.1.13 /u:jetson /size:1280x720
 ```
 **_option size display:_**
-_
-to use size 1280x720:
+
+_to use size 1280x720:_
 ```
 ... /size:1280x720
 ```
-to use full screen:
+_to use full screen:_
 ```
 ... /f
 ```
-_
 
-_here is mine:_
+
+**_here is mine:_**
 ![image](https://github.com/user-attachments/assets/6033dae1-821f-4353-a46a-f4b9543a3505)
 
-then, 
+**then, **
 ![image](https://github.com/user-attachments/assets/b2352f58-81d3-4379-9ad8-9a662ed9cbff)
 
 **_now RDP is on, but we can't open Terminal, so we do:_**
-> right click on Terminal button
+
+> right click on **```Terminal button```**
 >![image](https://github.com/user-attachments/assets/0af5231d-c8b2-4762-976d-f3bc0a164498)
 
-=> Properties
+**=> ```Properties```**
+
 ![image](https://github.com/user-attachments/assets/d85a2215-ec51-4c38-a49c-6bd1a68d850f)
 
-> right click on **blue "+" button**
+> right click on **blue "```+```" button**
 >>>>>> ![image](https://github.com/user-attachments/assets/1f36c319-607a-4f3c-a9cb-a26eec4a0bcc)
 
-> then **add "+" button**
+> then **add "```+```" button**
 > >>>>>>![image](https://github.com/user-attachments/assets/ecaf8b6b-c928-4e84-93f4-4faa4eac2713)
 
-> then **move to up** and then close
+> then **move to up** and then **close**
 >>>>>>>> ![image](https://github.com/user-attachments/assets/76d84c72-eb2f-4a9a-a785-d07217074f90)
 
 _Now left click on Terminal button and it works:_
+
 ![image](https://github.com/user-attachments/assets/741244b1-36fe-4633-aa28-ef88c12e4b88)
 
 ## SUMMARY: xfreeRDP works pretty fast and can temporarily replace HDMI screen
