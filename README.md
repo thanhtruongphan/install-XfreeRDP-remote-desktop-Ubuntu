@@ -201,7 +201,8 @@ sudo reboot
 ```
 
 ## ok, now start rdp:
-**_on Ubuntu laptop:_**
+
+**_COMMAND LINE SYSTAX:_**
 ```
 xfreerdp /v<your jestson nano ip> /u:<jet son name> /size:1280x720
 ```
