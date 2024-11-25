@@ -239,13 +239,13 @@ _to use full screen:_
 ![image](https://github.com/user-attachments/assets/d85a2215-ec51-4c38-a49c-6bd1a68d850f)
 
 > right click on **blue "```+```" button**
->>>>>> ![image](https://github.com/user-attachments/assets/1f36c319-607a-4f3c-a9cb-a26eec4a0bcc)
+> ![image](https://github.com/user-attachments/assets/1f36c319-607a-4f3c-a9cb-a26eec4a0bcc)
 
 > then **add "```+```" button**
-> >>>>>>![image](https://github.com/user-attachments/assets/ecaf8b6b-c928-4e84-93f4-4faa4eac2713)
+> ![image](https://github.com/user-attachments/assets/ecaf8b6b-c928-4e84-93f4-4faa4eac2713)
 
 > then **move to up** and then **close**
->>>>>>>> ![image](https://github.com/user-attachments/assets/76d84c72-eb2f-4a9a-a785-d07217074f90)
+> ![image](https://github.com/user-attachments/assets/76d84c72-eb2f-4a9a-a785-d07217074f90)
 
 _Now left click on Terminal button and it works:_
 
